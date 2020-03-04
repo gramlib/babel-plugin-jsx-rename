@@ -1,0 +1,34 @@
+{
+  "name": "babel-plugin-jsx-rename",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "umi-tools build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydeEvans/babel-plugin-jsx-rename.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydeEvans/babel-plugin-jsx-rename/issues"
+  },
+  "homepage": "https://github.com/sydeEvans/babel-plugin-jsx-rename#readme",
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.8.3",
+    "@babel/types": "^7.8.6"
+  },
+  "devDependencies": {
+    "umi-tools": "^0.4.0"
+  },
+  "files": [
+    "src",
+    "lib",
+    "package.json",
+    "README.md"
+  ]
+}

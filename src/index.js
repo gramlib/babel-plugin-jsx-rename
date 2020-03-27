@@ -14,6 +14,13 @@ function isCustomJsxTag(path) {
     return !tagName || (tagName[0] === tagName[0].toUpperCase());
 }
 
+
+function toHump(name) {
+    return name.replace(/\-(\w)/g, function (all, letter) {
+        return letter.toUpperCase();
+    });
+}
+
 export default declare((api, options) => {
     api.assertVersion(7);
     const { prefix, importee } = options;
@@ -50,7 +57,8 @@ export default declare((api, options) => {
                     if (!el.node) return;
                     const namePath = el.get('name');
                     const tagName = namePath.node.name;
-                    const transferTagName = tagName.replace(/^\S/, s => s.toUpperCase());
+                    let transferTagName = toHump(tagName);
+                    transferTagName = transferTagName.replace(/^\S/, s => s.toUpperCase());
                     namePath.replaceWith(
                         jsxIdentifier(`${prefix}${transferTagName}`)
                     )
